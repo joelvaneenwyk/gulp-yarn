@@ -29,37 +29,51 @@
   "scripts": {
     "build": "tsc",
     "coveralls": "tap test --ts --coverage-report=text-lcov | coveralls",
-    "lint": "eslint .",
+    "lint": "eslint **/*.ts",
     "lint:fix": "eslint . --fix",
     "release": "standard-version",
     "test": "tap test --ts",
     "test:only": "tap test --ts -O",
     "test:report": "tap test --ts --coverage-report=html"
   },
-  "dependencies": {
-    "@yarnpkg/sdks": "^3.0.0-rc.51",
-    "plugin-error": "^2.0.0",
-    "which": "^2.0.2"
+  "tap": {
+    "check-coverage": false
   },
-  "devDependencies": {
+  "dependencies": {
     "@antfu/eslint-config": "^0.27.0",
-    "@types/node": "^18.7.23",
+    "@antfu/eslint-config-ts": "^0.43.1",
+    "@antfu/eslint-config-vue": "^0.43.1",
+    "@types/node": "^20.6.3",
     "@types/sinon": "^10.0.13",
     "@types/tap": "^15.0.7",
     "@types/vinyl": "^2.0.6",
     "@types/which": "^2.0.1",
+    "@typescript-eslint/eslint-plugin": "^6.4.0",
+    "@typescript-eslint/parser": "^6.7.2",
+    "@yarnpkg/sdks": "^3.0.0-rc.51",
     "coveralls": "^3.1.1",
-    "eslint": "^8.24.0",
+    "eslint": "^8.50.0",
+    "eslint-config-standard-with-typescript": "latest",
+    "eslint-plugin-antfu": "^1.0.0-beta.4",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-html": "^7.1.0",
     "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsonc": "^2.9.0",
+    "eslint-plugin-markdown": "^3.0.1",
+    "eslint-plugin-n": "^15.0.0 || ^16.0.0 ",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-unicorn": "^48.0.1",
+    "eslint-plugin-vue": "^9.17.0",
+    "eslint-plugin-yml": "^1.9.0",
     "mock-spawn": "^0.2.6",
+    "plugin-error": "^2.0.0",
     "sinon": "^14.0.0",
     "standard-version": "^9.0.0",
     "tap": "^16.3.0",
     "ts-node": "^10.9.1",
-    "typescript": "^4.8.4",
-    "vinyl": "^2.1.0"
-  },
-  "tap": {
-    "check-coverage": false
+    "typescript": "^5.2.2",
+    "typescript-eslint": "^0.0.1-alpha.0",
+    "vinyl": "^2.1.0",
+    "which": "^2.0.2"
   }
 }

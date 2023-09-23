@@ -1,5 +1,18 @@
 {
-  "extends": ["@antfu", "plugin:import/recommended", "plugin:import/typescript"],
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es2021": true
+  },
+  "parserOptions": {
+    "ecmaVersion": "latest"
+  },
+  "extends": [
+    "standard-with-typescript",
+    "@antfu",
+    "plugin:import/recommended",
+    "plugin:import/typescript"
+  ],
   "rules": {
     "import/order": ["error", {"newlines-between": "always-and-inside-groups"}]
   },

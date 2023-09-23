@@ -4,7 +4,6 @@ import tap from 'tap'
 import File from 'vinyl'
 import type { SinonSpy } from 'sinon'
 import { spy } from 'sinon'
-// @ts-expect-error mock-spawn has no @typings
 import mockSpawn from 'mock-spawn'
 
 import gulpYarn from '../src'

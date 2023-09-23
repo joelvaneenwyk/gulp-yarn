@@ -9,11 +9,23 @@
     "skipLibCheck": true,
     "outDir": "lib",
     "moduleResolution": "node",
+    "lib": [
+      "ESNext"
+    ],
+    "paths": {
+      "*": [
+        "./src/@types/*"
+      ]
+    },
     "strictNullChecks": true,
     /* Additional Checks */
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
-  }
+  },
+  "include": [
+    "src/**/*.ts",
+    "test/**/*.ts"
+  ]
 }

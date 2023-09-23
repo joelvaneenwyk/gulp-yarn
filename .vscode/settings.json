@@ -1,6 +1,16 @@
 {
+  "[typescript]": {
+    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": true
+    }
+  },
   "cSpell.words": [
+    "antfu",
+    "Flis",
+    "lcov",
     "Malindu",
+    "refetches",
     "Warapitiya"
   ],
   "files.autoSave": "afterDelay",
@@ -15,5 +25,13 @@
   },
   "eslint.nodePath": ".yarn/sdks",
   "typescript.tsdk": ".yarn/sdks/typescript/lib",
-  "typescript.enablePromptUseWorkspaceTsdk": true
+  "typescript.enablePromptUseWorkspaceTsdk": true,
+  "tslint.enable": false,
+  "eslint.enable": true,
+  "eslint.codeActionsOnSave.rules": [
+    "@typescript-eslint/semi",
+    "@typescript-eslint/indent",
+    "!@typescript-eslint/*",
+    "*"
+  ]
 }
