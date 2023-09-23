@@ -29,8 +29,8 @@
   "scripts": {
     "build": "tsc",
     "coveralls": "tap test --ts --coverage-report=text-lcov | coveralls",
-    "lint": "eslint **/*.ts",
-    "lint:fix": "eslint . --fix",
+    "lint": "yarn eslint --no-ignore **/*.ts",
+    "lint:fix": "yarn eslint --no-ignore --fix **/*.ts",
     "release": "standard-version",
     "test": "tap test --ts",
     "test:only": "tap test --ts -O",

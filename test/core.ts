@@ -4,13 +4,13 @@ import tap from 'tap'
 import File from 'vinyl'
 import type { SinonSpy } from 'sinon'
 import { spy } from 'sinon'
-import mockSpawn from 'mock-spawn'
+import { mock_spawn } from 'mock-spawn'
 
 import gulpYarn from '../src'
 
 import pkg from './package.json'
 
-const spawnSandbox = mockSpawn()
+const spawnSandbox = mock_spawn()
 const oldSpawn = child_process.spawn
 let spawnSpy: SinonSpy
 

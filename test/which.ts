@@ -8,7 +8,7 @@ import gulpYarn from '../src'
 
 import pkg from './package.json'
 
-tap.test('handle "which" module error flow', (t) => {
+void tap.test('handle "which" module error flow', (t) => {
   t.plan(2)
   stub(which, 'sync').throws(new Error('Unit testing error'))
 

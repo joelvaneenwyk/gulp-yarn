@@ -7,11 +7,12 @@ import { Transform } from 'node:stream'
 import type { SpawnOptions } from 'node:child_process'
 import { spawn } from 'node:child_process'
 
+import type { CommandOptions } from './commands'
+
+import { PLUGIN_NAME, resolveYarnOptions } from './utils'
+
 import PluginError from 'plugin-error'
 import which from 'which'
-
-import type { CommandOptions } from './commands'
-import { PLUGIN_NAME, resolveYarnOptions } from './utils'
 
 interface RequiredFile {
   'package.json': {

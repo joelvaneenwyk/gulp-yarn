@@ -4,8 +4,7 @@ import tap from 'tap'
 import File from 'vinyl'
 import type { SinonSpy } from 'sinon'
 import { spy } from 'sinon'
-// @ts-expect-error mock-spawn has no @typings
-import mockSpawn from 'mock-spawn'
+import { mock_spawn } from 'mock-spawn'
 
 import which from 'which'
 import PluginError from 'plugin-error'
@@ -14,7 +13,7 @@ import gulpYarn from '../src'
 
 import pkg from './package.json'
 
-const spawnSandbox = mockSpawn()
+const spawnSandbox = mock_spawn()
 const oldSpawn = child_process.spawn
 let spawnSpy: SinonSpy
 
@@ -35,7 +34,7 @@ tap.teardown(() => {
   spawnSpy.restore()
 })
 
-tap.test('handle child_process spawn error', (t) => {
+void tap.test('handle child_process spawn error', (t) => {
   t.plan(2)
 
   const file = new File({
@@ -55,7 +54,7 @@ tap.test('handle child_process spawn error', (t) => {
   stream.end()
 })
 
-tap.test('check child_process spawn args', (t) => {
+void tap.test('check child_process spawn args', (t) => {
   const file = new File({
     base: 'package',
     path: 'test/package.json',
@@ -87,7 +86,7 @@ tap.test('check child_process spawn args', (t) => {
   })
 })
 
-tap.test('child_process spawn args should not get false options', (t) => {
+void tap.test('child_process spawn args should not get false options', (t) => {
   const file = new File({
     base: 'package',
     path: 'test/package.json',

@@ -1,10 +1,11 @@
 /**
  * Created by Malindu Warapitiya on 1/10/22.
  */
-import PluginError from 'plugin-error'
 
 import type { CommandOptions } from './commands'
 import { Commands } from './commands'
+
+import PluginError from 'plugin-error'
 
 type ErrorOrNull = PluginError | null
 
@@ -35,14 +36,14 @@ export const formatArguments = (args: string[] | string): string[] => {
  * @param gulpYarnOptions
  */
 export const resolveYarnOptions = (gulpYarnOptions?: Partial<CommandOptions>): [ErrorOrNull, string[]] => {
-  if (gulpYarnOptions) {
+  if (gulpYarnOptions !== undefined) {
     let error = null
     const listOfCommands: string[] = []
     const { args, ...otherOptions } = gulpYarnOptions
 
     for (const [key, value] of Object.entries(otherOptions)) {
       if (key in Commands) {
-        if (value === true) {
+        if (value) {
           const _command = Commands[key as keyof typeof Commands]
           listOfCommands.push(_command)
         }

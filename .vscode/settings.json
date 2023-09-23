@@ -1,9 +1,10 @@
 {
   "[typescript]": {
-    "editor.defaultFormatter": "dbaeumer.vscode-eslint",
+    "editor.defaultFormatter": "vscode.typescript-language-features",
     "editor.codeActionsOnSave": {
       "source.fixAll.eslint": true
-    }
+    },
+    "editor.indentSize": 2
   },
   "cSpell.words": [
     "antfu",

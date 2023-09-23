@@ -2,7 +2,7 @@ import tap from 'tap'
 
 import { formatArgument, formatArguments, resolveYarnOptions } from '../src/utils'
 
-tap.test('formatArgument() returns formatted argument', (t) => {
+void tap.test('formatArgument() returns formatted argument', (t): void => {
   t.plan(8)
   t.equal(formatArgument('production'), 'production')
   t.equal(formatArgument('--production'), '--production')
@@ -14,7 +14,7 @@ tap.test('formatArgument() returns formatted argument', (t) => {
   t.end()
 })
 
-tap.test('formatArguments() returns formatted arguments', (t) => {
+void tap.test('formatArguments() returns formatted arguments', (t) => {
   t.plan(9)
   t.same(formatArguments(['production']), ['production'])
   t.same(formatArguments(['--production']), ['--production'])
@@ -28,7 +28,7 @@ tap.test('formatArguments() returns formatted arguments', (t) => {
   t.end()
 })
 
-tap.test('resolveYarnOptions() can resolve passed options', (t) => {
+void tap.test('resolveYarnOptions() can resolve passed options', (t) => {
   // @ts-expect-error Unit testing purpose passing invalid property
   let [error] = resolveYarnOptions({ test: true })
   t.equal(error?.message, '\'test\' option is not supported by the plugin. Please use \'args\' option.')
