@@ -1,0 +1,19 @@
+{
+  "cSpell.words": [
+    "Malindu",
+    "Warapitiya"
+  ],
+  "files.autoSave": "afterDelay",
+  "testing.alwaysRevealTestOnStateChange": true,
+  "testExplorer.useNativeTesting": true,
+  "testExplorer.showOnRun": true,
+  "testExplorer.addToEditorContextMenu": true,
+  "testExplorer.sort": "byLabelWithSuitesFirst",
+  "search.exclude": {
+    "**/.yarn": true,
+    "**/.pnp.*": true
+  },
+  "eslint.nodePath": ".yarn/sdks",
+  "typescript.tsdk": ".yarn/sdks/typescript/lib",
+  "typescript.enablePromptUseWorkspaceTsdk": true
+}

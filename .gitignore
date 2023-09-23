@@ -3,6 +3,12 @@ logs
 *.log
 npm-debug.log*
 
+.yarn/cache/
+.yarn/unplugged/
+.yarn/install-state.gz
+.pnp.cjs
+.pnp.loader.mjs
+
 # Runtime data
 pids
 *.pid

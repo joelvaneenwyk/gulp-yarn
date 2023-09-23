@@ -15,8 +15,5 @@
     "noUnusedParameters": true,
     "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true
-  },
-  "exclude": [
-    "test"
-  ]
+  }
 }

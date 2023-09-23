@@ -2,6 +2,7 @@
   "name": "gulp-yarn",
   "type": "commonjs",
   "version": "4.0.1",
+  "packageManager": "yarn@3.6.3",
   "description": "Automatically install node modules using Yarn.",
   "author": "Malindu Warapitiya <warapitiya93@gmail.com>",
   "license": "MIT",
@@ -14,7 +15,7 @@
     "url": "https://github.com/warapitiya/gulp-yarn/issues"
   },
   "keywords": [
-    "gulpplugin",
+    "gulp-plugin",
     "yarn",
     "yarnpkg",
     "gulp",
@@ -36,6 +37,7 @@
     "test:report": "tap test --ts --coverage-report=html"
   },
   "dependencies": {
+    "@yarnpkg/sdks": "^3.0.0-rc.51",
     "plugin-error": "^2.0.0",
     "which": "^2.0.2"
   },
