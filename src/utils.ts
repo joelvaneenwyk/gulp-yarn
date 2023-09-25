@@ -25,8 +25,7 @@ export const formatArgument = (args: string): string => {
  * @returns {*}
  */
 export const formatArguments = (args: string[] | string): string[] => {
-  if (Array.isArray(args))
-    return args.map(item => formatArgument(item))
+  if (Array.isArray(args)) { return args.map(item => formatArgument(item)) }
 
   return [formatArgument(args)]
 }
@@ -47,23 +46,20 @@ export const resolveYarnOptions = (gulpYarnOptions?: Partial<CommandOptions>): [
           const _command = Commands[key as keyof typeof Commands]
           listOfCommands.push(_command)
         }
-      }
-      else {
+      } else {
         const msg = `'${key}' option is not supported by the plugin. Please use 'args' option.`
         error = new PluginError(PLUGIN_NAME, msg)
         return [error, []]
       }
     }
 
-    if (!args)
-      return [null, listOfCommands]
+    if (!args) { return [null, listOfCommands] }
 
     if (Array.isArray(args) || typeof args === 'string') {
       const formattedArgs = formatArguments(args)
       listOfCommands.push(...formattedArgs)
       return [null, listOfCommands]
-    }
-    else {
+    } else {
       const error = new PluginError(PLUGIN_NAME, '"Args" option is not in valid type.')
       return [error, []]
     }

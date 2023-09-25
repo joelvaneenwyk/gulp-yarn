@@ -34,7 +34,7 @@ tap.test('should warn when sending not supported args', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
   // @ts-expect-error passing invalid prop for unit testing purpose
   const stream = gulpYarn({ npm: true })
@@ -52,7 +52,7 @@ tap.test('should run with supported args', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn({ production: true })
@@ -73,7 +73,7 @@ tap.test('should run with false supported args', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn({ production: false })
@@ -94,13 +94,13 @@ tap.test('should not call two times', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const fakeJSFile = new File({
     base: 'package',
     path: 'test/package.js',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn({ production: true })
@@ -127,7 +127,7 @@ tap.test('should run without any arg', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn()
@@ -153,7 +153,7 @@ tap.test('should not run with empty file', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: undefined,
+    contents: undefined
   })
 
   const stream = gulpYarn({ production: true })
@@ -197,7 +197,7 @@ tap.test('should run with args as array', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn({ args: ['--production', '--no-bin-links'] })
@@ -223,7 +223,7 @@ tap.test('should run with args as string', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn({ args: '--production --no-bin-links' })
@@ -249,7 +249,7 @@ tap.test('args should start with dashes', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn({ args: 'production --no-bin-links' })
@@ -268,4 +268,3 @@ tap.test('args should start with dashes', (t) => {
   stream.write(fakeFile)
   stream.end()
 })
-

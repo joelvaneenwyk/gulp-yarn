@@ -9,7 +9,6 @@
   },
   "extends": [
     "standard-with-typescript",
-    "@antfu",
     "plugin:import/recommended",
     "plugin:import/typescript"
   ],

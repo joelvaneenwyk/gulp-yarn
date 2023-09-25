@@ -26,5 +26,5 @@ export const Commands = {
   noProgress: '--no-progress',
   noLockfile: '--no-lockfile',
   ignoreScripts: '--ignore-scripts',
-  nonInteractive: '--non-interactive',
+  nonInteractive: '--non-interactive'
 }

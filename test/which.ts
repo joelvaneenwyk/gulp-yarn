@@ -15,7 +15,7 @@ void tap.test('handle "which" module error flow', (t) => {
   const fakeFile = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn()

@@ -40,7 +40,7 @@ void tap.test('handle child_process spawn error', (t) => {
   const file = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn()
@@ -58,7 +58,7 @@ void tap.test('check child_process spawn args', (t) => {
   const file = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn({ production: true, ignoreEngines: true })
@@ -73,14 +73,14 @@ void tap.test('check child_process spawn args', (t) => {
         `"${yarnLocation}"`,
         [
           '--production',
-          '--ignore-engines',
+          '--ignore-engines'
         ],
         {
           stdio: 'inherit',
           shell: true,
-          cwd: 'test',
-        },
-      ],
+          cwd: 'test'
+        }
+      ]
     ])
     t.end()
   })
@@ -90,7 +90,7 @@ void tap.test('child_process spawn args should not get false options', (t) => {
   const file = new File({
     base: 'package',
     path: 'test/package.json',
-    contents: Buffer.from(JSON.stringify(pkg)),
+    contents: Buffer.from(JSON.stringify(pkg))
   })
 
   const stream = gulpYarn({ production: false, ignoreEngines: false, dev: true })
@@ -104,16 +104,15 @@ void tap.test('child_process spawn args should not get false options', (t) => {
       [
         `"${yarnLocation}"`,
         [
-          '--dev',
+          '--dev'
         ],
         {
           stdio: 'inherit',
           shell: true,
-          cwd: 'test',
-        },
-      ],
+          cwd: 'test'
+        }
+      ]
     ])
     t.end()
   })
 })
-

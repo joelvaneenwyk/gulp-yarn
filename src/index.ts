@@ -30,15 +30,15 @@ const requiredFileOpts: RequiredFile = {
     args: [],
     spawnOptions: {
       stdio: 'inherit',
-      shell: true,
-    },
-  },
+      shell: true
+    }
+  }
 }
 
 const gulpYarn = (gulpYarnOptions?: Partial<CommandOptions>) => {
   return new Transform({
     objectMode: true,
-    transform(chunk, _encoding, callback) {
+    transform (chunk, _encoding, callback) {
       if (chunk === undefined || chunk === null) {
         // Return empty file
         callback(null, chunk)
@@ -69,26 +69,25 @@ const gulpYarn = (gulpYarnOptions?: Partial<CommandOptions>) => {
         const cmd = spawn(
           `"${commandPath}"`,
           command.args,
-          command.spawnOptions,
+          command.spawnOptions
         )
 
         cmd.once('close', (code) => {
           if (code !== 0) {
             const error = new PluginError(
               PLUGIN_NAME,
-              `${command.cmd} exited with non-zero code ${code}.`,
+              `${command.cmd} exited with non-zero code ${code}.`
             )
             callback(error)
             return
           }
           callback(null, chunk)
         })
-      }
-      catch (error: unknown) {
+      } catch (error: unknown) {
         const catchError = new PluginError(PLUGIN_NAME, error as Error, { showStack: true })
         callback(catchError)
       }
-    },
+    }
   })
 }
 
